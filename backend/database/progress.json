@@ -1,0 +1,46 @@
+{
+  "1": {
+    "id": 1,
+    "email": "joao@gmail.com",
+    "name": "Jo\u00e3o",
+    "education_level": "Faculdade",
+    "interests": [
+      "Intelig\u00eancia Artificial",
+      "Redes"
+    ],
+    "difficulties": [
+      "Estrutura de Dados"
+    ],
+    "learning_style": "Pr\u00e1tico",
+    "goal": "Conseguir est\u00e1gio",
+    "onboarded": true,
+    "xp": 160,
+    "subjects": [
+      {
+        "name": "Programa\u00e7\u00e3o",
+        "percent": 16
+      }
+    ]
+  },
+  "1779499548228": {
+    "name": "DaviMarchal",
+    "email": "Davi@gmail.com",
+    "password": "2233",
+    "id": 1779499548228,
+    "onboarded": true,
+    "xp": 0,
+    "level": 1,
+    "streak": 0,
+    "education_level": "Faculdade",
+    "interests": [
+      "Backend",
+      "Ciberseguran\u00e7a"
+    ],
+    "difficulties": [
+      "\u00c1lgebra Linear",
+      "Recursividade"
+    ],
+    "learning_style": "R\u00e1pido",
+    "goal": "Virar Full Stack"
+  }
+}
