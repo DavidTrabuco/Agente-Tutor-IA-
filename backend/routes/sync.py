@@ -3,31 +3,28 @@ from flask import Blueprint, request, jsonify
 
 sync_bp = Blueprint('sync', __name__)
 
+USERS_FILE = 'database/users.json'
+PROFILE_FIELDS = {'education_level', 'interests', 'difficulties', 'learning_style', 'goal', 'onboarded'}
+
 @sync_bp.route("/sync-user", methods=["POST"])
 def sync_user():
     user_data = request.get_json()
-    user_id = str(user_data.get('id'))
-    
+    user_id = int(user_data.get('id'))
+
     try:
-        # Carregar DB de progresso/perfil
-        db = {}
-        if (open('database/progress.json', 'r')):
-            with open('database/progress.json', 'r') as f:
-                db = json.load(f)
-        
-        # Atualizar ou criar perfil
-        db[user_id] = user_data
-        
-        with open('database/progress.json', 'w') as f:
-            json.dump(db, f, indent=2)
-            
+        with open(USERS_FILE, 'r') as f:
+            users = json.load(f)
+
+        for u in users:
+            if u.get('id') == user_id:
+                for field in PROFILE_FIELDS:
+                    if field in user_data:
+                        u[field] = user_data[field]
+                break
+
+        with open(USERS_FILE, 'w') as f:
+            json.dump(users, f, indent=2)
+
         return jsonify({"status": "success"})
     except Exception as e:
-        # Se o arquivo não existir, criar um novo
-        try:
-            db = {user_id: user_data}
-            with open('database/progress.json', 'w') as f:
-                json.dump(db, f, indent=2)
-            return jsonify({"status": "success"})
-        except:
-            return jsonify({"error": str(e)}), 500
+        return jsonify({"error": str(e)}), 500

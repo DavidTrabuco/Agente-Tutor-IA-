@@ -59,5 +59,24 @@
         "percent": 5
       }
     ]
+  },
+  "2": {
+    "email": "joao@teste",
+    "id": 2,
+    "level": 1,
+    "name": "Joao Teste",
+    "onboarded": true,
+    "streak": 0,
+    "xp": 0,
+    "education_level": "Faculdade",
+    "interests": [
+      "Desenvolvimento Web"
+    ],
+    "difficulties": [
+      "APIs",
+      "Algoritmos"
+    ],
+    "learning_style": "R\u00e1pido",
+    "goal": "Melhorar notas"
   }
 }
