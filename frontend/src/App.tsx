@@ -29,7 +29,7 @@ const AppRoutes = () => {
           <Route path="/signup" element={!user ? <Signup /> : !user.onboarded ? <Navigate to="/questionario" /> : <Navigate to="/dashboard" />} />
 
                     
-
+          {/*teste de commit */}
           <Route path="/questionario" element={
             <PrivateRoute>
               {user?.onboarded ? <Navigate to="/dashboard" /> : <Questionario />}
