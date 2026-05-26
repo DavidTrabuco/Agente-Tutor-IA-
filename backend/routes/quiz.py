@@ -1,6 +1,7 @@
 import json
 import os
 import requests
+from datetime import date
 from flask import Blueprint, request, jsonify
 from services.tutor_logic import get_adaptive_prompt
 
@@ -117,6 +118,26 @@ def submit_answer():
             subjects.append({"name": subject_name, "percent": 5 if is_correct else 1})
         
         user_data['subjects'] = subjects
+
+        # Streak — compara com a data do último acesso
+        today = str(date.today())
+        last_date = user_data.get('last_answer_date', '')
+        if last_date == today:
+            pass  # já contou hoje
+        elif last_date == str(date.fromordinal(date.today().toordinal() - 1)):
+            user_data['streak'] = user_data.get('streak', 0) + 1
+        else:
+            user_data['streak'] = 1  # reinicia se pulou um dia
+        user_data['last_answer_date'] = today
+
+        # Tempo estudado — +2 min por questão respondida
+        user_data['time_studied_minutes'] = user_data.get('time_studied_minutes', 0) + 2
+        mins = user_data['time_studied_minutes']
+        if mins < 60:
+            user_data['time_studied'] = f"{mins}min"
+        else:
+            user_data['time_studied'] = f"{mins // 60}h{mins % 60:02d}min"
+
         db[user_id] = user_data
 
         with open('database/progress.json', 'w') as f:

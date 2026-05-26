@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className={s.brand}>
         <div className={s.logoCircle}>✦</div>
         <div className={s.titleGroup}>
-          <span className={s.title}>TutorIA</span>
+          <span className={s.title}><NavLink to="/dashboard">TutorIA</NavLink></span>
           <span className={s.subtitle}>Agente de aprendizado adaptativo</span>
         </div>
       </div>

@@ -15,7 +15,7 @@ const AppRoutes = () => {
   return (
     <div className="h-screen flex flex-col bg-[#181818]">
       {user && <Navbar />}
-      <main className="flex-1 overflow-y-auto">
+      <main className="flex-1 overflow-hidden">
         <Routes>
 
           {/* Se ele clicar no botao Inicio  ele sai e vai para o Dashboard  */}
