@@ -5,7 +5,7 @@ from flask import Blueprint, request, jsonify
 from services.tutor_logic import get_adaptive_prompt
 
 chat_bp = Blueprint('chat', __name__)
-
+#Aqui que faz a chamada API dentro do chatbot 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 API_URL = os.getenv("OPENROUTER_API_URL", "https://openrouter.ai/api/v1/chat/completions")
 
