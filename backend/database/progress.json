@@ -1,0 +1,82 @@
+{
+  "4": {
+    "email": "gabriel@gmail.com",
+    "id": 4,
+    "level": 1,
+    "name": "Gabriel Teste",
+    "onboarded": true,
+    "streak": 0,
+    "xp": 0,
+    "education_level": "Ensino Fundamental",
+    "interests": [
+      "Backend"
+    ],
+    "difficulties": [
+      "SQL"
+    ],
+    "learning_style": "R\u00e1pido",
+    "goal": "Virar Full Stack"
+  },
+  "5": {
+    "email": "lorena@gmail.com",
+    "id": 5,
+    "level": 1,
+    "name": "Lorena ",
+    "onboarded": true,
+    "streak": 0,
+    "xp": 0,
+    "education_level": "Curso T\u00e9cnico",
+    "interests": [
+      "Cloud Computing"
+    ],
+    "difficulties": [
+      "Algoritmos"
+    ],
+    "learning_style": "R\u00e1pido",
+    "goal": "Virar Full Stack"
+  },
+  "1": {
+    "email": "joao@gmail.com",
+    "id": 1,
+    "name": "Jo\u00e3o",
+    "education_level": "Faculdade",
+    "interests": [
+      "Frontend",
+      "Desenvolvimento Web"
+    ],
+    "difficulties": [
+      "Algoritmos",
+      "Redes",
+      "Estrutura de Dados"
+    ],
+    "learning_style": "Pr\u00e1tico",
+    "goal": "Virar Full Stack",
+    "onboarded": true,
+    "xp": 50,
+    "subjects": [
+      {
+        "name": "Frontend",
+        "percent": 5
+      }
+    ]
+  },
+  "2": {
+    "email": "joao@teste",
+    "id": 2,
+    "level": 1,
+    "name": "Joao Teste",
+    "onboarded": true,
+    "streak": 0,
+    "xp": 0,
+    "education_level": "Faculdade",
+    "interests": [
+      "Desenvolvimento Web"
+    ],
+    "difficulties": [
+      "APIs",
+      "Algoritmos"
+    ],
+    "learning_style": "R\u00e1pido",
+    "goal": "Melhorar notas"
+  }
+}

@@ -1,0 +1,248 @@
+<mxfile host="65bd71144e">
+    <diagram name="TutorIA - Fluxo Completo" id="tutoria-flow">
+        <mxGraphModel dx="632" dy="474" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="start" value="INÍCIO" style="ellipse;whiteSpace=wrap;html=1;fillColor=#4ade80;strokeColor=#22c55e;fontColor=#181818;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="580" width="120" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="app" value="Usuário acessa o app" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#252525;strokeColor=#555;fontColor=#e5e7eb;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="70" width="200" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="sessao" value="Tem sessão salva&#xa;no localStorage?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#4ade80;fontColor=#4ade80;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="120" width="260" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="start" target="app" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;" parent="1" source="app" target="sessao" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="grp-auth" value="AUTENTICAÇÃO" style="swimlane;startSize=25;fillColor=#0d1b2e;strokeColor=#3b82f6;fontColor=#60a5fa;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="250" width="540" height="440" as="geometry">
+                        <mxRectangle x="20" y="250" width="130" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="login" value="🔐  Tela de Login&#xa;/login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e3a5f;strokeColor=#3b82f6;fontColor=#ffffff;fontSize=12;fontStyle=1;" parent="grp-auth" vertex="1">
+                    <mxGeometry x="140" y="40" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="temconta" value="Tem conta&#xa;cadastrada?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#1e3a5f;strokeColor=#60a5fa;fontColor=#93c5fd;fontSize=10;" parent="grp-auth" vertex="1">
+                    <mxGeometry x="130" y="120" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="postlogin" value="POST /login&#xa;Verifica email + senha&#xa;users.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#172554;strokeColor=#2563eb;fontColor=#93c5fd;fontSize=10;" parent="grp-auth" vertex="1">
+                    <mxGeometry x="40" y="220" width="180" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cadastro" value="📝  Cadastro&#xa;/signup" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e3a5f;strokeColor=#3b82f6;fontColor=#ffffff;fontSize=12;fontStyle=1;" parent="grp-auth" vertex="1">
+                    <mxGeometry x="360" y="170" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="postsignup" value="POST /signup&#xa;Cria usuário&#xa;onboarded: false | xp: 0" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#172554;strokeColor=#2563eb;fontColor=#93c5fd;fontSize=10;" parent="grp-auth" vertex="1">
+                    <mxGeometry x="300" y="265" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="a3" style="edgeStyle=orthogonalEdgeStyle;" parent="grp-auth" source="login" target="temconta" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a4" value="SIM" style="edgeStyle=orthogonalEdgeStyle;fontColor=#4ade80;fontStyle=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="grp-auth" source="temconta" target="postlogin" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a5" value="NÃO" style="edgeStyle=orthogonalEdgeStyle;fontColor=#f87171;fontStyle=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="grp-auth" source="temconta" target="cadastro" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="360" y="155"/>
+                            <mxPoint x="360" y="140"/>
+                            <mxPoint x="430" y="140"/>
+                            <mxPoint x="430" y="170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="a6" style="edgeStyle=orthogonalEdgeStyle;" parent="grp-auth" source="cadastro" target="postsignup" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a8" value="NÃO" style="edgeStyle=orthogonalEdgeStyle;fontColor=#f87171;fontStyle=1;fontSize=11;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="sessao" target="login" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="260" y="225"/>
+                            <mxPoint x="260" y="270"/>
+                            <mxPoint x="250" y="270"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="onboarded" value="onboarded?&lt;br&gt;(questionário)&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#1a1a2e;strokeColor=#a855f7;fontColor=#d8b4fe;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="170" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="a9" value="SIM" style="edgeStyle=orthogonalEdgeStyle;fontColor=#4ade80;fontStyle=1;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="sessao" target="onboarded" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="770" y="170"/>
+                            <mxPoint x="920" y="170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="grp-q" value="QUESTIONÁRIO DE ONBOARDING" style="swimlane;startSize=28;fillColor=#0f0a1e;strokeColor=#a855f7;fontColor=#c4b5fd;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="810" y="350" width="280" height="330" as="geometry">
+                        <mxRectangle x="990" y="430" width="220" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="qhdr" value="📋  /questionario" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2d1b4e;strokeColor=#a855f7;fontColor=#d8b4fe;fontSize=12;fontStyle=1;" parent="grp-q" vertex="1">
+                    <mxGeometry x="40" y="40" width="200" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="steps" value="1️⃣  Nível de ensino&#xa;2️⃣  Áreas de interesse&#xa;3️⃣  Dificuldades&#xa;4️⃣  Estilo de aprendizado&#xa;5️⃣  Objetivo principal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1a0a2e;strokeColor=#7c3aed;fontColor=#c4b5fd;fontSize=10;align=left;" parent="grp-q" vertex="1">
+                    <mxGeometry x="20" y="120" width="240" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="sync" value="POST /sync-user&#xa;onboarded: true" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#14532d;strokeColor=#22c55e;fontColor=#4ade80;fontSize=10;fontStyle=1;" parent="grp-q" vertex="1">
+                    <mxGeometry x="50" y="265" width="180" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="aq1" style="edgeStyle=orthogonalEdgeStyle;" parent="grp-q" source="qhdr" target="steps" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="aq2" style="edgeStyle=orthogonalEdgeStyle;" parent="grp-q" source="steps" target="sync" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a10" value="NÃO" style="edgeStyle=orthogonalEdgeStyle;fontColor=#f87171;fontStyle=1;fontSize=11;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="onboarded" target="qhdr" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1060" y="230"/>
+                            <mxPoint x="1060" y="310"/>
+                            <mxPoint x="950" y="310"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dash" value="🏠  Dashboard&#xa;/dashboard" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#252525;strokeColor=#4ade80;fontColor=#4ade80;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="1240" y="180" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="a11" value="SIM" style="edgeStyle=orthogonalEdgeStyle;fontColor=#4ade80;fontStyle=1;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1120" y="215"/>
+                            <mxPoint x="1220" y="215"/>
+                            <mxPoint x="1220" y="205"/>
+                        </Array>
+                        <mxPoint x="1120" y="200" as="sourcePoint"/>
+                        <mxPoint x="1240" y="205" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="a12" value="→ Dashboard" style="edgeStyle=orthogonalEdgeStyle;fontColor=#4ade80;fontStyle=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.005;entryY=0.914;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="sync" edge="1" target="dash">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1150" y="638"/>
+                            <mxPoint x="1150" y="255"/>
+                            <mxPoint x="1230" y="255"/>
+                            <mxPoint x="1230" y="244"/>
+                        </Array>
+                        <mxPoint x="1169.95" y="420" as="sourcePoint"/>
+                        <mxPoint x="1229.95" y="250" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="a13" value="OK → salva sessão" style="edgeStyle=orthogonalEdgeStyle;fontColor=#4ade80;fontStyle=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="postlogin" target="onboarded" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="220" y="605"/>
+                            <mxPoint x="700" y="605"/>
+                            <mxPoint x="700" y="270"/>
+                            <mxPoint x="840" y="270"/>
+                            <mxPoint x="840" y="230"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="a14" value="OK → salva sessão" style="edgeStyle=orthogonalEdgeStyle;fontColor=#4ade80;fontStyle=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="postsignup" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="500" y="530"/>
+                            <mxPoint x="700" y="530"/>
+                            <mxPoint x="700" y="270"/>
+                            <mxPoint x="840" y="270"/>
+                            <mxPoint x="840" y="230"/>
+                        </Array>
+                        <mxPoint x="510" y="550" as="sourcePoint"/>
+                        <mxPoint x="980" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="grp-quiz" value="QUIZ" style="swimlane;startSize=25;fillColor=#1c1400;strokeColor=#f59e0b;fontColor=#fbbf24;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="1190" y="380" width="260" height="280" as="geometry">
+                        <mxRectangle x="1240" y="470" width="70" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="quiz" value="🎯  /quiz" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#292400;strokeColor=#f59e0b;fontColor=#fbbf24;fontSize=12;fontStyle=1;" parent="grp-quiz" vertex="1">
+                    <mxGeometry x="50" y="40" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="gq" value="POST /generate-question&#xa;IA gera questão adaptada&#xa;(Claude Haiku via OpenRouter)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1c1400;strokeColor=#d97706;fontColor=#fde68a;fontSize=9;" parent="grp-quiz" vertex="1">
+                    <mxGeometry x="20" y="120" width="220" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="resp" value="Aluno responde" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#292400;strokeColor=#f59e0b;fontColor=#fbbf24;fontSize=10;" parent="grp-quiz" vertex="1">
+                    <mxGeometry x="55" y="195" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="xp" value="✅  Certo → +50 XP&#xa;❌  Errado → +10 XP&#xa;📈  Atualiza progresso" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1c1400;strokeColor=#d97706;fontColor=#fde68a;fontSize=9;align=left;" parent="grp-quiz" vertex="1">
+                    <mxGeometry x="20" y="250" width="220" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="aqz1" style="edgeStyle=orthogonalEdgeStyle;" parent="grp-quiz" source="quiz" target="gq" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="aqz2" style="edgeStyle=orthogonalEdgeStyle;" parent="grp-quiz" source="gq" target="resp" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="aqz3" style="edgeStyle=orthogonalEdgeStyle;" parent="grp-quiz" source="resp" target="xp" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a15" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="dash" target="grp-quiz" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1320" y="265"/>
+                        </Array>
+                        <mxPoint x="1295" y="265" as="sourcePoint"/>
+                        <mxPoint x="1280" y="470" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="grp-chat" value="CHATBOT (TutorIA)" style="swimlane;startSize=25;fillColor=#0f1a2e;strokeColor=#38bdf8;fontColor=#7dd3fc;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="1460" y="380" width="280" height="280" as="geometry">
+                        <mxRectangle x="1490" y="390" width="140" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="chatbot" value="🤖  /chatbot" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0c2340;strokeColor=#38bdf8;fontColor=#7dd3fc;fontSize=12;fontStyle=1;" parent="grp-chat" vertex="1">
+                    <mxGeometry x="55" y="40" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="modos" value="Modo Tutor (normal)&#xa;─────────────&#xa;Modo Professor&#xa;(Método Socrático)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f1a2e;strokeColor=#0ea5e9;fontColor=#bae6fd;fontSize=10;" parent="grp-chat" vertex="1">
+                    <mxGeometry x="30" y="115" width="220" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="chatapi" value="POST /chat&#xa;Perfil do aluno + contexto&#xa;→ Claude Haiku (OpenRouter)&#xa;→ Resposta em PT-BR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f1a2e;strokeColor=#0ea5e9;fontColor=#bae6fd;fontSize=9;align=left;" parent="grp-chat" vertex="1">
+                    <mxGeometry x="20" y="210" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="ac1" style="edgeStyle=orthogonalEdgeStyle;" parent="grp-chat" source="chatbot" target="modos" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ac2" style="edgeStyle=orthogonalEdgeStyle;" parent="grp-chat" source="modos" target="chatapi" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="a16" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="dash" target="chatbot" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1560" y="230"/>
+                            <mxPoint x="1560" y="400"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="logout" value="🚪  Sair&#xa;logout() → /login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1c0a0a;strokeColor=#ef4444;fontColor=#f87171;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="1250" y="95" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="a17" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontColor=#f87171;" parent="1" source="dash" target="logout" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="xpsys" value="⚡  Sistema de Níveis de Dificuldade&#xa;0 – 999 XP   →  Questões Fáceis&#xa;1.000 – 2.999 XP  →  Questões Médias&#xa;3.000+ XP   →  Questões Difíceis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1c1400;strokeColor=#f59e0b;fontColor=#fde68a;fontSize=10;align=left;" parent="1" vertex="1">
+                    <mxGeometry x="1145" y="790" width="260" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="a18" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="xp" target="xpsys" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1275" y="770"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="erro401" value="❌  Erro 401&#xa;Email ou senha inválidos&#xa;→ Volta ao Login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3b0a0a;strokeColor=#ef4444;fontColor=#f87171;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="620" width="180" height="55" as="geometry"/>
+                </mxCell>
+                <mxCell id="a7" value="ERRO" style="edgeStyle=orthogonalEdgeStyle;fontColor=#f87171;fontStyle=1;" parent="1" source="postlogin" target="erro401" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
