@@ -4,12 +4,7 @@ import json
 from flask import Blueprint, request, jsonify
 from services.tutor_logic import get_adaptive_prompt
 
-<<<<<<< HEAD
-chat_bp = Blueprint('chat', __name__) 
-=======
 chat_bp = Blueprint('chat', __name__)
-
->>>>>>> 6d8a067151c4e51ba71e3fcc1f1e38e40c2156e5
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 API_URL = os.getenv("OPENROUTER_API_URL", "https://openrouter.ai/api/v1/chat/completions")
 

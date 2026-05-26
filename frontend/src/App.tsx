@@ -29,11 +29,6 @@ const AppRoutes = () => {
           <Route path="/signup" element={!user ? <Signup /> : !user.onboarded ? <Navigate to="/questionario" /> : <Navigate to="/dashboard" />} />
 
                     
-<<<<<<< HEAD
-          {/*teste de commit */}
-=======
-
->>>>>>> 6d8a067151c4e51ba71e3fcc1f1e38e40c2156e5
           <Route path="/questionario" element={
             <PrivateRoute>
               {user?.onboarded ? <Navigate to="/dashboard" /> : <Questionario />}
