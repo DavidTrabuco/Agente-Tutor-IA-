@@ -29,7 +29,7 @@ export default function ChatBot() {
     <div className={s.page}>
 
       <div className={s.tutorCard}>
-        <div className={s.tutorAvatar}>✦</div>
+        <div className={s.tutorAvatar}>🤓</div>
         <div className={s.tutorInfo}>
           <p className={s.tutorName}>Tutor IA</p>
           <div className={s.tutorStatusRow}>
@@ -57,7 +57,7 @@ export default function ChatBot() {
 
       <div className={s.messagesCard}>
         <div className={s.botRow}>
-          <div className={s.botAvatar}>✦</div>
+          <div className={s.botAvatar}>🤓</div>
           <div className={s.botBubble}>
             <p className={s.botText}>Olá! Sou seu Tutor IA da UNIFACS. Como posso te ajudar hoje?</p>
           </div>

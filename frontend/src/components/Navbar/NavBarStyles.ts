@@ -8,7 +8,7 @@ export const NavBarStyles = {
  nav: "flex items-center gap-2",
  navLink: "flex items-center gap-2 px-4 py-2 rounded-lg border border-[#3a3a3a] text-[#d1d5db] text-sm hover:bg-[#2a2a2a] transition-colors",
  navLinkActive: "flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-[#4ade80] text-[#4ade80] text-sm font-semibold",
- navButton: "flex items-center gap-2 px-4 py-2 rounded-lg border border-[#3a3a3a] text-[#d1d5db] text-sm hover:bg-[#2a2a2a] transition-colors cursor-pointer bg-transparent",
+ navButton: "flex items-center gap-2 ml-10 px-4 py-2 rounded-lg border border-[#3a3a3a] text-[#d1d5db] text-sm hover:bg-[#2a2a2a] transition-colors cursor-pointer bg-transparent",
  navButtonActive: "flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-white text-white text-sm font-semibold cursor-pointer bg-transparent",
  icon: "text-base",
  label: "text-sm",

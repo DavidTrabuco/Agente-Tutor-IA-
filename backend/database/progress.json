@@ -52,7 +52,7 @@
     "learning_style": "Pr\u00e1tico",
     "goal": "Virar Full Stack",
     "onboarded": true,
-    "xp": 890,
+    "xp": 1010,
     "subjects": [
       {
         "name": "Frontend",
@@ -60,7 +60,7 @@
       },
       {
         "name": "Redes",
-        "percent": 77
+        "percent": 89
       },
       {
         "name": "Estrutura de Dados",
@@ -73,8 +73,8 @@
     ],
     "streak": 2,
     "last_answer_date": "2026-05-27",
-    "time_studied_minutes": 36,
-    "time_studied": "36min"
+    "time_studied_minutes": 44,
+    "time_studied": "44min"
   },
   "2": {
     "email": "joao@teste",

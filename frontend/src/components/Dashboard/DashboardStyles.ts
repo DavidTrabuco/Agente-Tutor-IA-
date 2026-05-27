@@ -8,15 +8,15 @@ export const TelaPrincipalStyles = {
   greetingTitle:   "text-white text-lg font-semibold m-0",
   greetingSubtitle:"text-[#9ca3af] text-sm leading-relaxed m-0",
 
-  // Stats row
+  
   statsRow:        "grid grid-cols-3 gap-3",
-  statCard:        "flex flex-col items-center gap-2 bg-[#252525] rounded-2xl p-5 transform hover:scale-[1.02] transition-transform",
+  statCard:        "flex flex-col items-center gap-2 bg-[#252525] rounded-lg p-5 transform hover:scale-[1.01] transition-transform",
   statIcon:        "text-xl",
   statValue:       "text-white text-3xl font-bold m-0",
   statLabel:       "text-[#6b7280] text-xs text-center m-0",
 
-  // Skills map
-  skillsMapCard:   "p-6 bg-[#252525] rounded-2xl",
+ 
+  skillsMapCard:   "p-6 bg-[#252525] rounded-xl",
   skillsMapTitle:  "text-[#6b7280] text-xs font-bold tracking-widest uppercase mb-4",
   skillsMapList:   "space-y-4",
   skillRow:        "flex items-center gap-4",
@@ -24,11 +24,11 @@ export const TelaPrincipalStyles = {
   skillBars:       "flex-1 flex gap-1",
   skillBar:        "h-2 flex-1 rounded-sm",
 
-  // Subjects section
+ 
   subjectsSection: "flex flex-col gap-3",
   sectionHeading:  "text-[#6b7280] text-xs font-bold tracking-widest uppercase m-0",
   subjectsGrid:    "grid grid-cols-2 gap-3",
-  subjectCard:     "flex flex-col gap-3 bg-[#252525] rounded-2xl p-4 transform hover:scale-[1.02] transition-transform",
+  subjectCard:     "flex flex-col gap-3 bg-[#252525] rounded-lg p-4 transform hover:scale-[1.02] transition-transform",
   subjectHeader:   "flex items-center gap-3",
   subjectIcon:     "w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold flex-shrink-0",
   subjectInfo:     "flex flex-col gap-0.5",
@@ -42,7 +42,7 @@ export const TelaPrincipalStyles = {
   loading:         "p-8 text-white",
 
   // Difficulties card
-  difficultiesCard:  "p-4 bg-[#2a1a1a] rounded-2xl border border-[#451a1a]",
+  difficultiesCard:  "p-4 bg-[#2a1a1a] rounded-m border border-[#451a1a]",
   difficultiesTitle: "text-[#f87171] text-xs font-bold uppercase tracking-wider mb-2",
   difficultiesText:  "text-white text-sm",
 }
