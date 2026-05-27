@@ -32,7 +32,6 @@ const ComoFunciona: Feature[] = [
 
 export default function TelaPrincipal() {
 
-  //Teste do SourceTree
   return (
     <div className={s.container}>
       <div className={s.hero}>
