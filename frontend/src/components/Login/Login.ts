@@ -8,5 +8,8 @@ export const LoginStyles = {
   label: "text-[#9ca3af] text-sm font-medium",
   input: "w-full bg-[#1a1a1a] border border-[#333] rounded-xl px-4 py-3 text-white placeholder-[#4b5563] focus:outline-none focus:ring-2 focus:ring-[#4ade80] transition-all",
   button: "w-full bg-[#4ade80] hover:bg-[#22c55e] text-[#181818] font-bold py-3 rounded-xl transition-all transform active:scale-[0.98]",
+  btnOutline: "border-2 border-[#4ade80] text-[#4ade80] hover:bg-[#4ade80] hover:text-[#181818] font-bold px-42 py-3 rounded-xl transition-all active:scale-[0.98]",
   error: "text-red-400 text-sm text-center mt-4",
+  fieldError: "text-red-400 text-xs mt-1",
+  inputInvalid: "w-full bg-[#1a1a1a] border border-red-500 rounded-xl px-4 py-3 text-white placeholder-[#4b5563] focus:outline-none focus:ring-2 focus:ring-red-500 transition-all",
 }

@@ -8,6 +8,7 @@ import Signup from './pages/SignUpPages';
 import Questionario from './pages/QuestionarioPages';
 import Quiz from './pages/QuizPages';
 import ChatPage from './pages/ChatbotPages';
+import TelaPrincipalPage from './pages/TelaPrincipalPages';
 
 const AppRoutes = () => {
   const { user } = useAuth();
@@ -18,8 +19,7 @@ const AppRoutes = () => {
       <main className="flex-1 overflow-y-auto">
         <Routes>
 
-          {/* Se ele clicar no botao Inicio  ele sai e vai para o Dashboard  */}
-          <Route path="/" element={!user ? <Login /> : !user.onboarded ? <Navigate to="/questionario" /> : <Navigate to="/dashboard" />} />
+          <Route path="/" element={!user ? <TelaPrincipalPage /> : !user.onboarded ? <Navigate to="/questionario" /> : <Navigate to="/dashboard" />} />
 
           {/* Aqui se ele clicar o sair ele vai para o Login */}
           <Route path="/login" element={!user ? <Login /> : !user.onboarded ? <Navigate to="/questionario" /> : <Navigate to="/dashboard" />} />

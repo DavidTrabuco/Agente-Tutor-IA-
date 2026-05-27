@@ -106,6 +106,51 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({ children }) => {
 
 export const useAuth = () => useContext(AuthContext);
 
+export function useLoginForm() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({ email: '', password: '' });
+  const { login } = useAuth();
+
+  const validar = (): boolean => {
+    const next = { email: '', password: '' };
+    let valido = true;
+
+    if (!email) {
+      next.email = 'E-mail obrigatorio.';
+      valido = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      next.email = 'E-mail invalido.';
+      valido = false;
+    }
+
+    if (!password) {
+      next.password = 'Senha obrigatoria.';
+      valido = false;
+    } else if (password.length < 6) {
+      next.password = 'A senha deve ter ao menos 6 caracteres.';
+      valido = false;
+    }
+
+    setErrors(next);
+    return valido;
+  };
+
+  const handleSubmit = async (e: React.FormEvent, onSuccess: () => void) => {
+    e.preventDefault();
+    if (!validar()) return;
+
+    const success = await login(email, password);
+    if (!success) {
+      setErrors({ email: 'E-mail ou senha invalidos.', password: '' });
+    } else {
+      onSuccess();
+    }
+  };
+
+  return { email, setEmail, password, setPassword, errors, handleSubmit };
+}
+
 export const PrivateRoute = ({ children }: { children: ReactNode }) => {
   const { user, loading } = useAuth();
 
